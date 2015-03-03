@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'randnik'
+require 'randnik/options'
+require 'optparse'
+
+opts = Randnik::CliOptions.parse ARGV
+puts Randnik::Random.word opts
+# Wordnik calls if opts[:verbose]
