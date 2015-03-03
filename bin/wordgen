@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'wordgen'
+require 'wordgen/options'
+require 'optparse'
+
+opts = Wordgen::CliOptions.parse ARGV
+puts Wordgen::Random.word opts
+# Wordnik calls if opts[:verbose]

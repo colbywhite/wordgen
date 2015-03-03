@@ -1,7 +1,7 @@
 require_relative 'utils'
 require 'restclient'
 
-module Randnik
+module Wordgen
   module Random
     # opts = {:type => Randnik::Type, :complexity => Randnik::Complexity, :last => string}
     def self.word(opts = {})
@@ -10,8 +10,8 @@ module Randnik
 
     def self.get_payload(opts = {})
       defaults = {
-          :type => Randnik::Type::NOUN,
-          :complexity => Randnik::Complexity::AVERAGE,
+          :type => Wordgen::Type::NOUN,
+          :complexity => Wordgen::Complexity::AVERAGE,
           :last => '',
       }
       _opts = defaults.merge opts
@@ -23,6 +23,3 @@ module Randnik
     end
   end
 end
-
-# randword 
-# randword -t n -c

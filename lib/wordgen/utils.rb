@@ -1,4 +1,4 @@
-module Randnik
+module Wordgen
   module Complexity
     OBSCURE = 95
     VERY_UNCOMMON = 70
