@@ -11,7 +11,7 @@ module Wordgen
       }
 
       optparse = OptionParser.new do |opts|
-        opts.banner = "Usage: wordgen [-t type] [-c complexity] [-i]"
+        opts.banner = "Usage: wordgen [-t type] [-c complexity] [-i] [-v]"
         opts.on('-t', '--type <char>', 'define type of word to show') do |type|
           options[:type] = type
         end
