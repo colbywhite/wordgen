@@ -5,12 +5,17 @@ require 'wordgen/options'
 require 'optparse'
 
 opts = Wordgen::CliOptions.parse ARGV
-word = Wordgen::Random.word opts
-puts word
-# Wordnik calls if opts[:verbose]
 
-if opts[:verbose]
-  require 'wordgen/wordnik'
-  Wordgen::WordnikActions.print_definitions(word)
+loop do
+  word = Wordgen::Random.word opts
+  puts word
+
+  if opts[:verbose]
+    require 'wordgen/wordnik'
+    Wordgen::WordnikActions.print_definitions(word)
+  end
+  break unless opts[:interactive]
+
+  input = gets if opts[:interactive]
+  break if input.start_with?('q') || input.start_with?('Q')
 end
-
